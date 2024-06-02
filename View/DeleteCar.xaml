@@ -1,0 +1,52 @@
+﻿<Window x:Class="Autoberles.View.DeleteCar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Autoberles.View"
+        mc:Ignorable="d"
+        Title="Autó törlése" Height="400" Width="300">
+    <Grid>
+        <Label Content="ID:" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="20,20,0,0" Width="50"/>
+        <TextBlock x:Name="txId" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="120,25,0,0" Width="150"
+               Text="{Binding Id}"/>
+
+        <Label Content="Rendszám:" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="20,60,0,0" Width="100"/>
+        <TextBlock x:Name="txRegistrationNumber" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="120,65,0,0" Width="150"
+              Text="{Binding RegistrationNumber}"/>
+
+        <Label Content="Márka:" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="20,100,0,0" Width="50"/>
+        <TextBlock x:Name="txBrand" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="120,105,0,0" Width="150"
+                 Text="{Binding Brand}"/>
+
+        <Label Content="Típus:" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="20,140,0,0" Width="100"/>
+        <TextBlock x:Name="txType" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="120,145,0,0" Width="150"
+              Text="{Binding Type}"/>
+
+        <Label Content="Évjárat:" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="20,180,0,0" Width="100"/>
+        <TextBlock x:Name="txYear" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="120,185,0,0" Width="150"
+              Text="{Binding Year}"/>
+
+        <Label Content="Ár (HUF):" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="20,220,0,0" Width="100"/>
+        <TextBlock x:Name="txPrice" HorizontalAlignment="Left"
+            VerticalAlignment="Top" Margin="120,225,0,0" Width="150"
+              Text="{Binding Price}"/>
+
+        <Button x:Name="btnDelete" Content="Törlés"
+            HorizontalAlignment="Left" VerticalAlignment="Bottom"
+            Margin="30,0,0,20" Width="70" Click="btnDelete_Click"/>
+        <Button x:Name="btnCancel" Content="Mégsem" HorizontalAlignment="Right"
+            VerticalAlignment="Bottom" Margin="0,0,30,20" Width="70" Click="btnCancel_Click"/>
+    </Grid>
+</Window>
