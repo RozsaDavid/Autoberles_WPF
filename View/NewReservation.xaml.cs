@@ -21,6 +21,15 @@ namespace Autoberles.View {
             dpStartDate.SelectedDate = DateTime.Now.AddDays(1);
             dpEndDate.SelectedDate = DateTime.Now.AddDays(7);
 
+            setUserCarStart(cars, users);
+
+            this.reservations = reservations;
+        }
+
+        private void setUserCarStart(List<Car> cars, List<User> users) {
+            cbRegistrationNumber.Items.Clear();
+            cbUsername.Items.Clear();
+
             activeUsers = users;
             foreach(User user in activeUsers)
                 cbUsername.Items.Add(user.Username);
@@ -29,8 +38,6 @@ namespace Autoberles.View {
             allCars = cars;
             foreach(Car car in cars)
                 cbRegistrationNumber.Items.Add(car.RegistrationNumber);
-
-            this.reservations = reservations;
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e) {
@@ -102,18 +109,22 @@ namespace Autoberles.View {
 
         private void dpEndDate_SelectedDateChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e) {
             grReservation.Visibility = Visibility.Hidden;
+            setUserCarStart(allCars, activeUsers);
         }
 
         private void dpEndDate_TextInput(object sender, System.Windows.Input.TextCompositionEventArgs e) {
             grReservation.Visibility = Visibility.Hidden;
+            setUserCarStart(allCars, activeUsers);
         }
 
         private void dpStartDate_SelectedDateChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e) {
             grReservation.Visibility = Visibility.Hidden;
+            setUserCarStart(allCars, activeUsers);
         }
 
         private void dpStartDate_TextInput(object sender, System.Windows.Input.TextCompositionEventArgs e) {
             grReservation.Visibility = Visibility.Hidden;
+            setUserCarStart(allCars, activeUsers);
         }
     }
 }
